@@ -1,5 +1,5 @@
 # Ceng140
 
 command:
-  > make all
+  >>> make all
 clears all, compiles and runs.
