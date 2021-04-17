@@ -2,5 +2,5 @@
 
 command:
 (clears all, compiles and runs. )
-  $~ make all
+  \n$~ make all
 
