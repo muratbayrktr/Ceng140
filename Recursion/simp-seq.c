@@ -56,11 +56,26 @@ double catalan_num(int n)
 }
 
 /* fibonacci will be implemented */
+int fibonacci_helper(int n, int current, int prev) 
+{
+    if (n == 1) return current;
+    return fibonacci_helper(n-1, current+prev, current);
+}
+
+int fibonacci(int n) 
+{
+    if (n == 1) return 1;
+    if (n == 2) return 1;
+    return fibonacci_helper(n-2, 1, 1); 
+}
 
 int main(void) 
 {
     double arithmetic_sequences(int a, double d, int n);
     double geometric_sequences(int a, double d, int n);
+    double catalan_num(int n);
+    int fibonacci(int n);
+    int fibonacci_helper(int n, int current, int prev);
 
     printf("Binomial coefficients for: \nb(4,2): %d\nb(5,3): %d\nb(8,4): %d\n",
                                     binomial_coefficient(4,2),
@@ -81,10 +96,13 @@ int main(void)
                         geometric_sequences(1,PI,10));
 
     printf("\n5th Catalan Number: \n%f\n%f\n%f\n%f\n%f\n",
-    catalan_num(1),
-    catalan_num(2),
-    catalan_num(3),
-    catalan_num(4),
-    catalan_num(5));
+                        catalan_num(1),
+                        catalan_num(2),
+                        catalan_num(3),
+                        catalan_num(4),
+                        catalan_num(5));
+
+
+    printf("9th Fibonacci num is %d\n", fibonacci(23));
     return 0;
 }
