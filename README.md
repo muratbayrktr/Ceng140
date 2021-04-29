@@ -1,6 +1,6 @@
 # Ceng140
 
-command:
-(clears all, compiles and runs. )
-$~ make all
+command:  
+ 
+$~ make all  # clears all, compiles and runs.  
 
