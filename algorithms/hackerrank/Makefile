@@ -1,7 +1,7 @@
-name = digit_frequency
+name = variadic_functions
 
 run:
-	if [  $(name) ]; then rm $(name); fi;
+	if [-a $(name)]; then rm $(name); fi;
 	sleep 2
 	gcc $(name).c -o $(name)
 	sleep 1
