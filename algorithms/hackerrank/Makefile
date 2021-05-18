@@ -1,10 +1,10 @@
-name = variadic_functions
+name = dynamic_mem
 
 run:
 	if [-a $(name)]; then rm $(name); fi;
-	sleep 2
+	sleep 0.5
 	gcc $(name).c -o $(name)
-	sleep 1
+	sleep 0.5
 	clear
-	./$(name) < input.txt
+	./$(name) < $(name)_input.txt
 	
