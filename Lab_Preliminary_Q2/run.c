@@ -7,22 +7,15 @@ int main()
 
     char substr[10] = "eng!";
 
-    int arr[10], i;
+    int arr[10];
 
     to_lower(sentence);
 
     substrings(sentence, substr, arr);
 
-    /* Content of arr is {25,36,55} */
-
-    for (i = 0; i < 10; i++) {
-        printf("%d\n",arr[i]);
-    }
-
-    removeX(sentence, arr, 3);
+    addSome(sentence, arr, substr);
 
     print_sentence(sentence);
-
 
     return 0;
 }

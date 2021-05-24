@@ -43,11 +43,47 @@ void substrings(char * sentence, char * substr, int * arr){
 }
 
 void removeX(char * sentence, int * arr, int count){
-
+    int i,k,c,ind;
+    int normalizer = count;
+    for (i = 0; i < 3; i ++)
+    {
+        ind = arr[i] - i*normalizer;
+        k = 0;
+        for(c = count; c > 0; c--) 
+        {
+            while (*(sentence + ind + k) != '!') 
+            {
+                *(sentence + ind + k) = *(sentence + ind + k + count);
+                /* normalizer = 3; */
+                k++;
+            }
+        }
+    }
     return ;
 }
 
 void addSome(char * sentence, int * arr, char * substr){
+    int i = 0,sub_len = 0;
+    while (substr[i++] != '!') {
+        sub_len++;
+    }
+    int i,k,c,ind;
+    int normalizer = sub_len;
+    for (i = 0; i < 3; i ++)
+    {
+        ind = arr[i] - i*normalizer;
+        k = 0;
+        for(c = sub_len; c > 0; c--) 
+        {
+            while (*(sentence + ind + k) != '!') 
+            {
+                *(sentence + ind + k + sub_len) = *(sentence + ind + k);
+                
+                k++;
+            }
+        }
+    }
+    
     return ;
 }
 
