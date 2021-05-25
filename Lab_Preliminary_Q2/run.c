@@ -3,19 +3,22 @@
 
 int main()
 {
-    char sentence[256] = "This is the lab exam of CENG140 of Ceng department (in english version)!";
+    char map[mapHeight][mapWidth] = {{'.','.','X','X','X'}, {'X','X','.','.','.'}, {'.', '.', '.', '.', '.'}, {'X', 'X', 'X', '.', 'X'}, {'.', '.', '.', '.', 'X'}};
 
-    char substr[10] = "eng!";
+	int prev_moves[prevCount][2] = {{0,2}, {0,3}, {0,4}, {1,1}, {4,4}, {2,2}, {2,3}, {3,1}, {3,2}, {2,4}, {-1,-1}};
 
-    int arr[10];
+	int next_moves[nextCount][2];
 
-    to_lower(sentence);
+	int i =0;
 
-    substrings(sentence, substr, arr);
+	battle_ship(map, prev_moves, next_moves);
 
-    addSome(sentence, arr, substr);
-
-    print_sentence(sentence);
-
+    while ((next_moves[i][0] != -1) || (next_moves[i][1] != -1))
+    {
+        int y = next_moves[i][0];
+        int x = next_moves[i][1];
+        printf("(y,x) = %d,%d\n",y,x);
+        i++; 
+    }
     return 0;
 }
