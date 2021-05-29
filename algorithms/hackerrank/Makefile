@@ -1,4 +1,10 @@
-name = dynamic_mem
+name = circular_rotation
+
+main:
+	gcc -Wall -pedantic-errors $(name).c -o $(name)
+
+clean:
+	rm $(name)
 
 run:
 	if [-a $(name)]; then rm $(name); fi;
