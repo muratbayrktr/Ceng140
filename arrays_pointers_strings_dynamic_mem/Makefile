@@ -1,8 +1,8 @@
-name = two-dim_dynamic
+name = compactify
 # compiler
 CC=gcc
 # compiler flags
-CFLAGS=-Wall -ansi -pedantic-errors
+CFLAGS=-Wall -ansi -pedantic-errors -O0
 # link/load flags ex: "-lm" for math.h
 LDFLAGS=
 
