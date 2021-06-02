@@ -1,8 +1,8 @@
-name = compactify
+name = pile
 # compiler
 CC=gcc
 # compiler flags
-CFLAGS=-Wall -ansi -pedantic-errors -O0
+CFLAGS=-Wall -ansi -pedantic-errors 
 # link/load flags ex: "-lm" for math.h
 LDFLAGS=
 
