@@ -1,4 +1,4 @@
-name = pile
+name = recursive_infix_eval
 # compiler
 CC=gcc
 # compiler flags
