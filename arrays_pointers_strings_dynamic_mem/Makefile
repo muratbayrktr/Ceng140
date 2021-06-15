@@ -1,4 +1,4 @@
-name = recursive_infix_eval
+name = int_to_ascii
 # compiler
 CC=gcc
 # compiler flags
