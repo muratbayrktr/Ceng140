@@ -29,11 +29,34 @@ Np union_iterative(Np first, Np second)
     {
         if (link(first) == NULL)
         {
-            printf("datum:%d\n",data(first));
             link(first) = second;
             break;
         }
         first = link(first);
     }
     return new;
+}
+void print_list_recursive(Np start)
+{
+    if(start)
+    {
+        printf("%d ",data(start));
+        print_list_recursive(link(start));
+    }
+    return;
+}
+
+
+
+Np union_recursive(Np first, Np second)
+{
+    
+    Np *lf = &link(first);
+    link(first) = second;
+    if (lf && link(second))
+    {
+        union_recursive(&lf, first);
+    }
+    return first;
+    
 }
