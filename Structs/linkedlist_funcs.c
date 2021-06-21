@@ -46,17 +46,37 @@ void print_list_recursive(Np start)
     return;
 }
 
+void print_list(Np start)
+{
+    while(start)
+    {
+        printf("%d ", data(start));
+        start = link(start);
+    }
+}
 
 
 Np union_recursive(Np first, Np second)
 {
-    
-    Np *lf = &link(first);
+    Np next = link(first);
+    printf("\nSecond:\n");
+    print_list(second);
     link(first) = second;
-    if (lf && link(second))
+    if (link(second))
     {
-        union_recursive(&lf, first);
+        Np temp;
+        temp = union_recursive(second, next);
+    printf("\n---Stack:---\n");
+    print_list(temp);
+    printf("\n---------\n\n");
+    }
+    else if (link(first))
+    {   
+        printf("First:\n");
+        print_list(first);
+        printf("\nSecond:\n");
+        print_list(second);
+        printf("\n\n");
     }
     return first;
-    
 }

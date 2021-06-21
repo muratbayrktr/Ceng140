@@ -45,7 +45,6 @@ int main(void)
 
     Np linked_list_1 = read_linked_list();
     Np linked_list_2 = read_linked_list();
-    Np united;
 
     printf("Reverse recursive print\n");
     print_list_reverse_recursive(linked_list_1);
@@ -53,6 +52,8 @@ int main(void)
 
     printf("Normal recursive print\n");
     print_list_recursive(linked_list_1);
+    printf("\n");
+    print_list_recursive(linked_list_2);
     printf("\n\n");
 
     printf("Recursive member(65, linked_list_1): %d\n", member_recursive(65,linked_list_1));
@@ -66,8 +67,7 @@ int main(void)
     printf("\n\n");
 
     printf("Union recursive: \n");
-    united = union_recursive(linked_list_1,linked_list_2);
-    print_list_recursive(united);
+    print_list(union_recursive(linked_list_1, linked_list_2));
     printf("\n\n");
 
     return 0;

@@ -22,7 +22,11 @@ int member_iterative(int x, Np P);
 Np union_recursive(Np first, Np second);
 
 Np union_iterative(Np first, Np second);
+
 void print_list_recursive(Np start);
+
+void print_list(Np start);
+
 /* O(n) and malloc not allowed */
 Np reverse_list_recursive(Np linkedlist);
 
