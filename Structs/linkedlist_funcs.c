@@ -1,5 +1,31 @@
 #include "linkedlist_funcs.h"
 
+Np read_linked_list()
+{
+    Np start = NULL, new;
+    union read_data val;
+
+    while (scanf("%d",&val.data), val.stop_char != '#')
+    {
+        new = malloc(sizeof(Node));
+        data(new) = val.data;
+        link(new) = start;
+        start = new;
+    }
+    
+    return start;
+}
+
+void print_list_reverse_recursive(Np start)
+{
+    
+    if(start)
+    {
+        print_list_reverse_recursive(link(start));
+        printf("%d ",data(start));
+    }
+    return;
+}
 
 int member_recursive(int x, Np P)
 {
@@ -53,30 +79,39 @@ void print_list(Np start)
         printf("%d ", data(start));
         start = link(start);
     }
+    printf("\n");
 }
 
 
-Np union_recursive(Np first, Np second)
+Np union_recursive(Np a, Np b)
 {
-    Np next = link(first);
-    printf("\nSecond:\n");
-    print_list(second);
-    link(first) = second;
-    if (link(second))
+    Np temp1 = a;
+    Np temp2 = b;
+    if (temp2)
     {
-        Np temp;
-        temp = union_recursive(second, next);
-    printf("\n---Stack:---\n");
-    print_list(temp);
-    printf("\n---------\n\n");
+        union_recursive(temp1, link(temp2));
+    } else temp2 = temp1;
+    return temp1;
+}
+
+Np reverse_list_iterative(Np linkedlist)
+{
+    Np prev=NULL, current=linkedlist, next = link(current);
+    while(next)
+    {
+        link(current) = prev;
+        prev = current;
+        current = next;
+        next = link(next);
     }
-    else if (link(first))
-    {   
-        printf("First:\n");
-        print_list(first);
-        printf("\nSecond:\n");
-        print_list(second);
-        printf("\n\n");
-    }
-    return first;
+    link(current) = prev;
+    return current;
+}
+
+
+Np reverse_list_recursive(Np linkedlist)
+{
+
+    
+    return NULL;
 }
